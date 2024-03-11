@@ -1,0 +1,33 @@
++------------------+       +------------------+        +------------------+
+|      User        |       |      Topic       |        |      Room        |
++------------------+       +------------------+        +------------------+
+| id (PK)          |       | id (PK)          |        | id (PK)          |
+| username         |       | name             |        | host (FK User)   |
+| email            |       +------------------+        | topic (FK Topic) |
+| name             |             |                     | name (CharField) |
+| bio              |             v                     | description      |
+| avatar           |       +------------------+        | participants     |
+| ...              |       |      Room        |        | updated          |
+|                  |       +------------------+        | created          |
+|                  |       | id (PK)          |        +------------------+
+|                  |       | host (FK User)   |      
+|                  |       | topic (FK Topic) |      
+|                  |       | name (CharField) |      
+|                  |       | description      |      
+|                  |       | participants     |      
+|                  |       | updated          |      
+|                  |       | created          |
+|                  |       +------------------+
++------------------+             |
+                                 |
+                                 |
++------------------+             |
+|    Message       |             |
++------------------+             |
+| id (PK)          |             |
+| user (FK User)   |             |
+| room (FK Room)   |<------------+
+| body             |
+| updated          |
+| created          |
++------------------+

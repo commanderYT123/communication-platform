@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+<div class="container">
+    <div class="sidebar">
+        {% include "communityApp/topics.html" %}
+    </div>
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        <a href="{% url "create-room" %}">create room</a>
+        {% include "communityApp/feed.html" %}
+    </div>
+    <div>
+        {% include "communityApp/activity.html" %}
+    </div>
+</div>
+{% endblock content %}
